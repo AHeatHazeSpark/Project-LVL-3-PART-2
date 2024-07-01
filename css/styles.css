@@ -1,21 +1,7 @@
-/*
- * CSS written based on SMACSS architecture.
- * To learn more, visit: http://smacss.com/
- *
- * For simplicity, no reset or normalize is added.
- * To learn more, visit: https://css-tricks.com/reboot-resets-reasoning/
- *
- * TODO: Feel free to make any changes you'd like to personalize your project. Alternatively,  * you can start from scratch!
-*/
-
 /* ---- Base Rules ---- */
 body {
     background: rgb(219, 226, 232);
-    background: linear-gradient(
-        0deg,
-        rgba(219, 226, 232, 1) 0%,
-        rgba(255, 255, 255, 1) 100%
-    );
+    background: linear-gradient(0deg, rgba(219, 226, 232, 1) 0%, rgba(255, 255, 255, 1) 100%);
     margin: 0;
     font-family: 'Merriweather', serif;
     color: #171a53;
@@ -44,6 +30,7 @@ h2 {
 p {
     line-height: 1.6em;
 }
+
 /* ---- Layout Rules ---- */
 main {
     margin: 10vh 1em 10vh;
@@ -61,30 +48,42 @@ section {
 
 /* ---- Module Rules ---- */
 
-/* Navigation Styles*/
-.navbar__menu ul {
-    padding-left: 0;
+/* Navigation Styles */
+.navbar__menu { 
+    display: flex;  /* Use flexbox to layout the items horizontally */
+    justify-content: center;  /* Center the navbar items */
+    align-items: center;  /* Vertically align the items */
+    background-color: #fff;  /* Background color for the navbar */
+    padding: 1em 0;  /* Padding for spacing */
+    position: fixed;  /* Fix the navbar at the top */
+    top: 0;
+    width: 100%;
+    z-index: 5;
+}
+
+#navbar__list {
+    display: flex;  /* Use flexbox to layout the items horizontally */
+    list-style: none;  /* Remove default list styling */
+    padding: 0;
     margin: 0;
-    text-align: left;
 }
 
-.navbar__menu li {
-    display: flex;
-    flex-direction: row;    
+#navbar__list li {
+    margin: 0 1em;  /* Spacing between items */
 }
 
-.navbar__menu .menu__link {
+.menu__link {
     display: block;
     padding: 1em;
     font-weight: bold;
     text-decoration: none;
     color: #171a53;
+    transition: background 0.3s ease, color 0.3s ease;  /* Smooth transition for hover effect */
 }
 
-.navbar__menu .menu__link:hover {
+.menu__link:hover {
     background: #2015ff;
     color: #fff;
-    transition: ease 0.3s all;
 }
 
 /* Header Styles */
@@ -128,16 +127,12 @@ section:nth-of-type(even) .landing__container {
 }
 
 /* Background Circles */
-/* Note that background circles are created with psuedo elements before and after */
-/* Circles appear to be random do to use of :nth-of-type psuedo class */
+/* Note that background circles are created with pseudo elements before and after */
+/* Circles appear to be random due to use of :nth-of-type pseudo class */
 section:nth-of-type(odd) .landing__container::before {
     content: '';
     background: rgba(189, 234, 9, 0.8);
-    background: linear-gradient(
-        0deg,
-        rgba(189, 234, 9, 0.5) 0%,
-        rgba(189, 234, 9, 1) 100%
-    );
+    background: linear-gradient(0deg, rgba(189, 234, 9, 0.5) 0%, rgba(189, 234, 9, 1) 100%);
     position: absolute;
     z-index: -5;
     width: 20vh;
@@ -150,11 +145,7 @@ section:nth-of-type(odd) .landing__container::before {
 section:nth-of-type(even) .landing__container::before {
     content: '';
     background: rgb(101, 151, 255);
-    background: linear-gradient(
-        0deg,
-        rgba(101, 151, 255, 0.5) 0%,
-        rgba(101, 151, 255, 1) 100%
-    );
+    background: linear-gradient(0deg, rgba(101, 151, 255, 0.5) 0%, rgba(101, 151, 255, 1) 100%);
     position: absolute;
     top: 3em;
     right: 3em;
@@ -169,11 +160,7 @@ section:nth-of-type(even) .landing__container::before {
 section:nth-of-type(even) .landing__container::after {
     content: '';
     background: rgb(177, 129, 255);
-    background: linear-gradient(
-        0deg,
-        rgba(177, 129, 255, 0.5) 0%,
-        rgba(177, 129, 255, 1) 100%
-    );
+    background: linear-gradient(0deg, rgba(177, 129, 255, 0.5) 0%, rgba(177, 129, 255, 1) 100%);
     position: absolute;
     left: 3em;
     bottom: -1em;
@@ -188,11 +175,7 @@ section:nth-of-type(even) .landing__container::after {
 section:nth-of-type(3n) .landing__container::after {
     content: '';
     background: rgb(32, 21, 255);
-    background: linear-gradient(
-        0deg,
-        rgba(32, 21, 255, 0.5) 0%,
-        rgba(32, 21, 255, 1) 100%
-    );
+    background: linear-gradient(0deg, rgba(32, 21, 255, 0.5) 0%, rgba(32, 21, 255, 1) 100%);
     position: absolute;
     right: 0;
     bottom: 0;
@@ -207,11 +190,7 @@ section:nth-of-type(3n) .landing__container::after {
 section:nth-of-type(3n + 1) .landing__container::after {
     content: '';
     background: rgb(10, 197, 161);
-    background: linear-gradient(
-        0deg,
-        rgba(10, 197, 161, 0.5) 0%,
-        rgba(10, 197, 161, 1) 100%
-    );
+    background: linear-gradient(0deg, rgba(10, 197, 161, 0.5) 0%, rgba(10, 197, 161, 1) 100%);
     position: absolute;
     right: 20vw;
     bottom: -5em;
@@ -226,11 +205,7 @@ section:nth-of-type(3n + 1) .landing__container::after {
 section:nth-of-type(5n) .landing__container::after {
     content: '';
     background: rgb(177, 129, 255);
-    background: linear-gradient(
-        0deg,
-        rgba(177, 129, 255, 0.5) 0%,
-        rgba(177, 129, 255, 1) 100%
-    );
+    background: linear-gradient(0deg, rgba(177, 129, 255, 0.5) 0%, rgba(177, 129, 255, 1) 100%);
     position: absolute;
     right: 20vw;
     bottom: -5em;
@@ -247,11 +222,7 @@ section:nth-of-type(5n) .landing__container::after {
 /* Note: .active class is applied through javascript and is not found in index.html */
 section.active {
     background: rgb(0, 0, 0);
-    background: linear-gradient(
-        0deg,
-        rgba(0, 0, 0, 0.1) 0%,
-        rgba(0, 0, 0, 0) 100%
-    );
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
 }
 
 section.active .landing__container::before {
