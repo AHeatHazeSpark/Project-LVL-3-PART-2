@@ -246,3 +246,27 @@ section.active .landing__container::after {
 }
 
 /* TODO: Add styles for Comments section and form */
+#comment{
+    display: inline-block;
+}
+#login input{
+    width: 100% ;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+#submitbutton{
+    background-color: #00daf7;
+    font-size: 20px;
+    color: aliceblue;
+    border: none;
+    padding: 16px;
+    border-radius: 4px;
+    transition-duration: 0.4s;
+}
+#submitbutton:hover{
+    background-color: white;
+    border:#00daf7;
+    color: #00daf7;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
