@@ -1,3 +1,30 @@
+// Define your navbar items
+const navbarItems = [
+  { text: 'Section1', url: '#section1' },
+  { text: 'Section2', url: '#section2' },
+  { text: 'Section3', url: '#section3' },
+  { text: 'Section4', url: '#section4' },
+  { text: 'Comment', url: '#comment'}
+];
+
+// Function to create navbar and append to existing ul
+function createNavbar() {
+  const ul = document.querySelector('ul');  // Select the existing ul
+
+  navbarItems.forEach(item => {
+      const li = document.createElement('li');  // Create a new <li> element
+      const a = document.createElement('a');    // Create a new <a> element
+
+      a.textContent = item.text;  // Set the text content of the link
+      a.href = item.url;          // Set the href attribute of the link
+      a.classList.add('menu__link'); //set the class name to the link
+      li.appendChild(a);  // Append the <a> tag to <li>
+      ul.appendChild(li); // Append the <li> to the existing <ul>
+  });
+}
+
+// Call createNavbar function whenever needed, e.g., on page load
+document.addEventListener('DOMContentLoaded', createNavbar);
 document.addEventListener('DOMContentLoaded', () => {
     // Select all links with hashes
     document.querySelectorAll('a[href^="#"]').forEach(anchor => { 
