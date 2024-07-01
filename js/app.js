@@ -1,6 +1,3 @@
-/** TODO: Build the navigation bar using JavaScript **/
-/** TODO: Add smooth scrolling **/
-
 document.addEventListener('DOMContentLoaded', () => {
     // Select all links with hashes
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -14,8 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
-
-
 /** TODO: Add an active state **/
 
 /** TODO: Add a comment form **/
